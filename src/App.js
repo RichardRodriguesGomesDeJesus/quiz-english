@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Footer from "./components/footer.jsx";
 //import AnswerGroup from "./components/AnswerGroup.jsx";
 import { useState } from "react";
+import FormQuest from "./components/form-quest.jsx";
 
 const Comtainer = styled.main`
   align-items: center;
@@ -70,6 +71,7 @@ const Div = styled.div`
 `
 export default function App() {
   const [start, setStart] = useState(false)
+  const quests = [{text: "Como traduzimos a frase: 'Olá meu nome é Carlos' ?", options:[{text:"My dog is gay",certo: false}]}]
   return (
     <Div className="App">
       {start === false&&(
@@ -80,7 +82,13 @@ export default function App() {
             <br/>
               Teste seus conhecimentos da lingua inglesa
           </Text>  
-          <BtnStart>Começar</BtnStart>
+          <BtnStart onClick={()=>{setStart(true)}}>Começar</BtnStart>
+        </Comtainer>
+      )}
+      {start === true &&(
+        <Comtainer>
+          <Title>Quiz interativo de Vocabulário em Inglês</Title>
+          <FormQuest questoes={quests} />
         </Comtainer>
       )}
       <Footer/>
