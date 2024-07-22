@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
 }
-main {
+.App {
     display: flex;
-    height: 100vh;
+    flex-direction: column;
+    min-height: 100vh;
 }

@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Footer from "./components/footer.jsx";
+import './App.css';
 
 const Comtainer = styled.main`
   display: flex;
   flex-direction:column;
-  min-height: 100vh;
+  flex-grow: 1;
   *{
     font-family: "Inter", sans-serif;
   }
@@ -52,7 +53,7 @@ const Text = styled.p`
 
 export default function App() {
   return (
-    <>
+    <div className="App">
       <Comtainer>
         <Title>Quiz interativo de Vocabulário em Inglês</Title>
         <Text>
@@ -62,7 +63,7 @@ export default function App() {
         </Text>  
       </Comtainer>
       <Footer/>
-    </>
+    </div>
   );
 }
 
