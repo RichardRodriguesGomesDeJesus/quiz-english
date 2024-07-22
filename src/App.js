@@ -5,13 +5,7 @@ import AnswerGroup from "./components/AnswerGroup.jsx";
 const Comtainer = styled.main`
   display: flex;
   flex-direction:column;
-  min-height: 100vh;
-
-  section{
-    display: flex;
-    flex-direction:column;
-    flex-grow:1;
-  }
+  flex-grow: 1;
   *{
     font-family: "Inter", sans-serif;
   }
@@ -59,18 +53,18 @@ const Text = styled.p`
 
 export default function App() {
   return (
-    <Comtainer>
-      <section>
+    <div className="App">
+      <Comtainer>
         <Title>Quiz interativo de Vocabulário em Inglês</Title>
         <AnswerGroup></AnswerGroup>
         <Text>
           <strong>Bem vindo ao quiz interativo!</strong>
           <br/>
-          Teste seus conhecimentos da lingua inglesa
-        </Text>
-      </section>
+            Teste seus conhecimentos da lingua inglesa
+        </Text>  
+      </Comtainer>
       <Footer/>
-    </Comtainer>
+    </div>
   );
 }
 
