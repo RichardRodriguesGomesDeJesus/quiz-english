@@ -13,6 +13,7 @@ const Comtainer = styled.main`
   }
 `
 const BtnStart = styled.button`
+  background: #D9D9D9;
   border-radius: 50px;
   border: none;
   cursor: pointer;
