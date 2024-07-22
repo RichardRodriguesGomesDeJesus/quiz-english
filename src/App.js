@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Footer from "./components/footer.js";
+import AnswerGroup from "./components/AnswerGroup.jsx";
 
 const Comtainer = styled.main`
   display: flex;
@@ -61,6 +62,7 @@ export default function App() {
     <Comtainer>
       <section>
         <Title>Quiz interativo de Vocabulário em Inglês</Title>
+        <AnswerGroup></AnswerGroup>
         <Text>
           <strong>Bem vindo ao quiz interativo!</strong>
           <br/>
