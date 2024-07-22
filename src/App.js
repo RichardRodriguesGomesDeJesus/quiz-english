@@ -55,11 +55,11 @@ export default function App() {
     <>
       <Comtainer>
         <Title>Quiz interativo de Vocabulário em Inglês</Title>
-          <Text>
-            <strong>Bem vindo ao quiz interativo!</strong>
-            <br/>
+        <Text>
+          <strong>Bem vindo ao quiz interativo!</strong>
+          <br/>
             Teste seus conhecimentos da lingua inglesa
-          </Text>  
+        </Text>  
       </Comtainer>
       <Footer/>
     </>
