@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Footer from "./components/footer.js";
-import AnswerGroup from "./components/AnswerGroup.jsx";
+import Footer from "./components/footer.jsx";
+import Question from "./components/Question.jsx";
 
 const Comtainer = styled.main`
   display: flex;
@@ -51,12 +51,20 @@ const Text = styled.p`
   }
 `
 
+const ContainerQuestion = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 export default function App() {
   return (
     <div className="App">
       <Comtainer>
         <Title>Quiz interativo de Vocabulário em Inglês</Title>
-        <AnswerGroup></AnswerGroup>
+        <ContainerQuestion>
+          <Question/>
+        </ContainerQuestion>
         <Text>
           <strong>Bem vindo ao quiz interativo!</strong>
           <br/>

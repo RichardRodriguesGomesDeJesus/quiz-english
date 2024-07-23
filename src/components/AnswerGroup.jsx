@@ -5,23 +5,25 @@ const List = styled.ul`
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 4em;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
 ` 
 
-export default function AnswerGroup(){
+export default function AnswerGroup(props){
     return(
-        <List>
-            <Answer value='1' name='radio' id='radio1'
-                label='Voce ja deu?'
+        <List role="list">
+            <Answer value='A' name='radio' id='radio1'
+                label={props.option1}
             />
-            <Answer value='2' name='radio' id='radio2'
-                label='Se leu mamou eu'
+            <Answer value='B' name='radio' id='radio2'
+                label={props.option2}
             />
-            <Answer value='3' name='radio' id='radio3'
-                label='Sem memem'
+            <Answer value='C' name='radio' id='radio3'
+                label={props.option3}
             />
-            <Answer value='4' name='radio' id='radio4'
-                label='Boa'
+            <Answer value='D' name='radio' id='radio4'
+                label={props.option4}
             />
         </List>
     );
