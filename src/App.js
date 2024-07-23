@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import Footer from "./components/footer.jsx";
-import Question from "./components/Question.jsx";
+import Footer from "./components/footer.js";
+import AnswerGroup from "./components/AnswerGroup.jsx";
 
 const Comtainer = styled.main`
+  align-items: center;
   display: flex;
   flex-direction:column;
   flex-grow: 1;
@@ -10,6 +11,17 @@ const Comtainer = styled.main`
     font-family: "Inter", sans-serif;
   }
 `
+const BtnStart = styled.button`
+  background: #D9D9D9;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+  margin: 27px 0 0 0;
+  height: 80px;
+  min-width: 270px;
+`
+
 const Title = styled.h1`
   font-weight:800;
   text-align: center;
@@ -50,7 +62,11 @@ const Text = styled.p`
     }
   }
 `
-
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+`
 const ContainerQuestion = styled.div`
     display: flex;
     flex-direction: column;
@@ -58,21 +74,29 @@ const ContainerQuestion = styled.div`
 `
 
 export default function App() {
+  const [start, setStart] = useState(false)
+  const quests = [{text: "Como traduzimos a frase: 'Olá meu nome é Carlos' ?", options:[{text:"My dog is gay",certo: false}]}]
   return (
-    <div className="App">
-      <Comtainer>
-        <Title>Quiz interativo de Vocabulário em Inglês</Title>
-        <ContainerQuestion>
-          <Question/>
-        </ContainerQuestion>
-        <Text>
-          <strong>Bem vindo ao quiz interativo!</strong>
-          <br/>
-            Teste seus conhecimentos da lingua inglesa
-        </Text>  
-      </Comtainer>
+    <Div className="App">
+      {start === false&&(
+        <Comtainer>
+          <Title>Quiz interativo de Vocabulário em Inglês</Title>
+          <Text>
+            <strong>Bem vindo ao quiz interativo!</strong>
+            <br/>
+              Teste seus conhecimentos da lingua inglesa
+          </Text>  
+          <BtnStart onClick={()=>{setStart(true)}}>Começar</BtnStart>
+        </Comtainer>
+      )}
+      {start === true &&(
+        <Comtainer>
+          <Title>Quiz interativo de Vocabulário em Inglês</Title>
+          <FormQuest questoes={quests} />
+        </Comtainer>
+      )}
       <Footer/>
-    </div>
+    </Div>
   );
 }
 
