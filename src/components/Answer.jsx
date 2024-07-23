@@ -5,7 +5,7 @@ const ItemList = styled.li`
     list-style-type: none;
 `
 const Input = styled.input`
-    visibility: visible;
+    visibility: hidden;
 
     &:checked + label {
         background-color: red;
@@ -27,7 +27,7 @@ const Label = styled.label`
 export default function Answer(props){
     return(
         <ItemList>
-            <Input type="hidden" value={props.value} name={props.name} id={props.id} />
+            <Input type="radio" value={props.value} name={props.name} id={props.id} />
             <Label for={props.id}>{props.label}</Label>
         </ItemList>
     );

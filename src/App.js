@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import Footer from "./components/footer.js";
-import AnswerGroup from "./components/AnswerGroup.jsx";
+import Footer from "./components/footer.jsx";
+import { useState } from "react";
+import FormQuest from "./components/form-quest.jsx";
+import Question from "./components/Question.jsx";
 
 const Comtainer = styled.main`
   align-items: center;
@@ -92,7 +94,7 @@ export default function App() {
       {start === true &&(
         <Comtainer>
           <Title>Quiz interativo de Vocabulário em Inglês</Title>
-          <FormQuest questoes={quests} />
+          <Question/>
         </Comtainer>
       )}
       <Footer/>

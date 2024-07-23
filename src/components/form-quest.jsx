@@ -32,11 +32,11 @@ export default function FormQuest({questoes}) {
   const [acertou, setAcertou] = useState(false)
   const [click, setClick] = useState(false)
   const [i , setI] = useState(0)
-  console.log(qu)
+  // console.log(qu)
   return(
     <Form>
 
-      {click == false &&questoes[i].options.map((e,index)=>(
+      {click === false &&questoes[i].options.map((e,index)=>(
         <Btn key={index} onClick={()=>{
           if (e.certo === true) {
             setAcertou(true)
