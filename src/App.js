@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Footer from "./components/footer.jsx";
 import { useState } from "react";
-import FormQuest from "./components/form-quest.jsx";
 import Question from "./components/Question.jsx";
 
 const Comtainer = styled.main`
@@ -77,7 +76,6 @@ const ContainerQuestion = styled.div`
 
 export default function App() {
   const [start, setStart] = useState(false)
-  const quests = [{text: "Como traduzimos a frase: 'Olá meu nome é Carlos' ?", options:[{text:"My dog is gay",certo: false}]}]
   return (
     <Div className="App">
       {start === false&&(
