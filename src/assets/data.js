@@ -7,7 +7,7 @@ export const data = [
         option3: "Porque não sei",
         option4: "Porque é isso ai",
 
-        ans: "A"
+        ans: "3"
     },
 
     {
@@ -18,7 +18,7 @@ export const data = [
         option3: "Porque o que",
         option4: "Porque é isso ai",
 
-        ans: "A"
+        ans: "4"
     },
 
     {
@@ -29,7 +29,7 @@ export const data = [
         option3: "Porque não sei3",
         option4: "Porque é isso ai3",
 
-        ans: "A"
+        ans: "2"
     },
 
 ]
