@@ -6,6 +6,7 @@ import './OptionsGroup.css'
 const ContainerQuestion = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1em;
     width: 80vw;
 `
@@ -56,18 +57,43 @@ const OptionItem = styled.li`
         background-color: red;
     }
 `
+const Result = styled.p`
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    strong{
+        font-weight: 800;
+    }
+    @media screen and (min-width: 0){
+        font-size: 16px;
+    }
+    
+    @media screen and (min-width: 768px){
+        font-size: 24px;
+    }
+
+    @media screen and (min-width: 1024px){
+        font-size: 32px;
+    }
+`
 
 export default function Question(){
 
     let [index, setIndex] = useState(0);
     let [question, setQuestion] = useState(data[index]);
     let [lock, setLock] = useState(false);
+    const [finish, setFinish] = useState(false)
+    const [hits, setHits] = useState(0)
 
     const nextQuestion = () => {
         if (index<data.length-1) {
             ++index;
         } else {
-            index=0;
+            setFinish(true)
+            setIndex(0)
         }
         setIndex(index);
         setQuestion(data[index]);
@@ -83,6 +109,7 @@ export default function Question(){
         if (!lock) {
             if (ans===question.ans) {
                 e.target.classList.add("correct");
+                setHits(hits + 1)
             } else {
                 e.target.classList.add("wrong");
                 option_array[question.ans-1].current.classList.add("correct");
@@ -100,19 +127,30 @@ export default function Question(){
 
     return(
         <ContainerQuestion>
-            <NumberQuestion>Pergunta {index+1}</NumberQuestion>
-            <Divider />
-            <TitleQuestion>{question.question}</TitleQuestion>
+            {finish == false &&(
+                <>
+                    <NumberQuestion>Pergunta {index+1}</NumberQuestion>
+                    <Divider />
+                    <TitleQuestion>{question.question}</TitleQuestion>
 
-            <List>
-                <OptionItem ref={Option2} onClick={(e)=>checkAns(e, 'A')} value='1' id='option1'>{question.option1}</OptionItem>
-                <OptionItem ref={Option1} onClick={(e)=>checkAns(e, 'B')} value='2' id='option2'>{question.option2}</OptionItem>
-                <OptionItem ref={Option3} onClick={(e)=>checkAns(e, 'C')} value='3' id='option3'>{question.option3}</OptionItem>
-                <OptionItem ref={Option4} onClick={(e)=>checkAns(e, 'D')} value='4' id='option4'>{question.option4}</OptionItem>
-            </List>
+                    <List>
+                        <OptionItem ref={Option2} onClick={(e)=>checkAns(e, 'A')} value='1' id='option1'>{question.option1}</OptionItem>
+                        <OptionItem ref={Option1} onClick={(e)=>checkAns(e, 'B')} value='2' id='option2'>{question.option2}</OptionItem>
+                        <OptionItem ref={Option3} onClick={(e)=>checkAns(e, 'C')} value='3' id='option3'>{question.option3}</OptionItem>
+                        <OptionItem ref={Option4} onClick={(e)=>checkAns(e, 'D')} value='4' id='option4'>{question.option4}</OptionItem>
+                    </List>
 
-            <BtnNextQuestion onClick={nextQuestion}> Próximo </BtnNextQuestion>
+                    <BtnNextQuestion onClick={nextQuestion}> Próximo </BtnNextQuestion>
 
+                </>
+            )}
+            { finish == true &&(
+                <Result>
+                    <strong>Parabéns!</strong>
+                    <br/>
+                    Você acertou {hits}/{data.length}
+                </Result>
+            )}
         </ContainerQuestion>
     );
 }
