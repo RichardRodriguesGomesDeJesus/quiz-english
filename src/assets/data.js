@@ -1,33 +1,33 @@
 export const data = [
     {
-        question: "Por que usar esmalte preto se tem o vermelho?",
+        question: 'Qual é a tradução para o inglês da frase "Eu gostaria de uma xícara de chá, por favor."?',
 
-        option1: "Porque sim",
-        option2: "Porque não",
-        option3: "Porque não sei",
-        option4: "Porque é isso ai",
+        option1: "Hi, what is your name?",
+        option2: "Hello, my name is Laura",
+        option3: "I would like a cup of tea, please.",
+        option4: "wellcome",
 
         ans: "3"
     },
 
     {
-        question: "Por que usar esmalte preto se tem o vermelho?",
+        question: "Como se pergunta a cor favorita de alguém em inglês?",
 
-        option1: "Porque eu quero",
-        option2: "Porque sim",
-        option3: "Porque o que",
-        option4: "Porque é isso ai",
+        option1: "What is your most liked color.",
+        option2: "Red is very nice",
+        option3: "I am sad",
+        option4: "What is your favorite color?",
 
         ans: "4"
     },
 
     {
-        question: "Por que usar esmalte preto se tem o vermelho?",
+        question: "Como traduzimos a frase: “Olá meu nome é Richard“",
 
-        option1: "Porque 3",
-        option2: "Porque 3",
-        option3: "Porque não sei3",
-        option4: "Porque é isso ai3",
+        option1: "My name ar Richard",
+        option2: "Hi, My name is Richard",
+        option3: "My dog is very nice",
+        option4: "My father is very nice",
 
         ans: "2"
     },
