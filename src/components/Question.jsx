@@ -134,10 +134,10 @@ export default function Question(){
                     <TitleQuestion>{question.question}</TitleQuestion>
 
                     <List>
-                        <OptionItem ref={Option2} onClick={(e)=>checkAns(e, 'A')} value='1' id='option1'>{question.option1}</OptionItem>
-                        <OptionItem ref={Option1} onClick={(e)=>checkAns(e, 'B')} value='2' id='option2'>{question.option2}</OptionItem>
-                        <OptionItem ref={Option3} onClick={(e)=>checkAns(e, 'C')} value='3' id='option3'>{question.option3}</OptionItem>
-                        <OptionItem ref={Option4} onClick={(e)=>checkAns(e, 'D')} value='4' id='option4'>{question.option4}</OptionItem>
+                        <OptionItem ref={Option2} onClick={(e)=>checkAns(e, '1')} value='1' id='option1'>{question.option1}</OptionItem>
+                        <OptionItem ref={Option1} onClick={(e)=>checkAns(e, '2')} value='2' id='option2'>{question.option2}</OptionItem>
+                        <OptionItem ref={Option3} onClick={(e)=>checkAns(e, '3')} value='3' id='option3'>{question.option3}</OptionItem>
+                        <OptionItem ref={Option4} onClick={(e)=>checkAns(e, '4')} value='4' id='option4'>{question.option4}</OptionItem>
                     </List>
 
                     <BtnNextQuestion onClick={nextQuestion}> Próximo </BtnNextQuestion>
