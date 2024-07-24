@@ -54,7 +54,7 @@ const OptionItem = styled.li`
     border: 0.1em solid;
     
     &:hover{
-        background-color: red;
+        background-color: #D9D9D9;
     }
 `
 const Result = styled.p`

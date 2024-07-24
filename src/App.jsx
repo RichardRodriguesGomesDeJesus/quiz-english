@@ -68,11 +68,6 @@ const Div = styled.div`
     flex-direction: column;
     min-height: 100vh;
 `
-const ContainerQuestion = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
 
 export default function App() {
   const [start, setStart] = useState(false)
